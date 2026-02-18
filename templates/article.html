@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ a.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 900px; margin: 24px auto; padding: 0 12px; }
+    .back { margin: 8px 0 16px; display: inline-block; }
+    pre { white-space: pre-wrap; background: #f7f7f7; padding: 12px; border-radius: 8px; }
+    .meta { color:#555; margin-bottom: 12px;}
+  </style>
+</head>
+<body>
+  <a class="back" href="/">← Back</a>
+  <h1>{{ a.title }}</h1>
+  <div class="meta">
+    <strong>Category:</strong> {{ a.category }} ({{ "%.2f"|format(a.category_conf or 0) }}) |
+    <strong>Sentiment:</strong> {{ a.sentiment }} |
+    <strong>Source:</strong> {{ a.source }}
+  </div>
+
+  <h3>Summary</h3>
+  <p>{{ a.summary }}</p>
+
+  <h3>Full text</h3>
+  <pre>{{ a.content }}</pre>
+</body>
+</html>
